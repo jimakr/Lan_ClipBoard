@@ -1,4 +1,4 @@
-# Lan ClipBoard 
+﻿# Lan ClipBoard 
 ## Why use it - Who needs it
 
 Sharing simple code and text while working in a group
@@ -18,3 +18,24 @@ all you need to do is be connected in the same WiFi network.
  3. Press windows + c to send your message to the network
  4. Everyone with an open instance of the program will receive it directly in their clipboard
 
+## Build from source
+
+- open the files in a virtual environment and install pyinstaller:
+
+    `pip install pyinstaller`
+
+- got to .spec file and change:
+
+
+	> ~~['C:\\Users\\jim\\PycharmProjects\\lanclipboard\\custom.ico'~~
+
+	To:
+
+	> ['*%files_path%*\\\custom.ico']
+
+	*don't forget to use double '\\\\'* 
+
+-  Finally build the files with the new spec file
+	open terminal and type
+	`pyinstaller clipboardshare.spec`
+- Binary file should be inside dist folder
